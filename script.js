@@ -11,13 +11,20 @@ function initGame() {
 function loopGame(array, boxes) {
 
 	const btnRestart = document.getElementById('btnRestart');
+	const btnStart = document.getElementById('btnStart');
+	const btnStartContainer = document.getElementById('btnStartContainer');
 	const inGameBoard = document.getElementById('inGame-board');
 	const score = document.getElementById('scoreValue');
 	const timer = document.getElementById('timer');
+	const timerContainer = document.getElementById('timerContainer');
 	let boxesFlippeds = [];
 
-	timer.innerText = 45;
-	changeTimer(timer);
+	btnStart.addEventListener('click', () => {
+		btnStartContainer.classList.toggle('disabled');
+		timerContainer.classList.toggle('disabled');
+		timer.innerText = 45;
+		changeTimer(timer);
+	})
 
 	btnRestart.addEventListener('click', () => {
 		document.location.reload(true);
@@ -74,7 +81,7 @@ function showEndGameMessage() {
 	const msgEndGame = document.getElementById('message-endGame');
 	const score = document.getElementById('scoreValue');
 
-	msgEndGame.innerText = `Você marcou ${score.innerText} de ${16} pontos. Parabéns!`;
+	msgEndGame.innerText = `Você marcou ${score.innerText} de ${8} pontos.`;
 
 	endGameDiv.classList.toggle('disabled');
 	inGameBoard.classList.toggle('disabled');
