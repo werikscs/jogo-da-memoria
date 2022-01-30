@@ -22,7 +22,7 @@ function loopGame(array, boxes) {
 	btnStart.addEventListener('click', () => {
 		btnStartContainer.classList.toggle('disabled');
 		timerContainer.classList.toggle('disabled');
-		timer.innerText = 45;
+		timer.innerText = 30;
 		changeTimer(timer);
 	})
 
@@ -65,7 +65,6 @@ function loopGame(array, boxes) {
 
 function hideNoParity(boxesFlippeds, inGameBoard) {
 	setTimeout(function () {
-		console.log('teste')
 		boxesFlippeds[0].textContent = '';
 		boxesFlippeds[0].classList.remove('checking');
 
