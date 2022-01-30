@@ -17,6 +17,12 @@ body{
 	align-items: center;
 }
 
+h1{
+	font-size: 4rem;
+	margin-top: 8px;
+	font-weight: 800;
+}
+
 .inGame-header{
 	width: 100%;
 	display: flex;
