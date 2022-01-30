@@ -22,6 +22,7 @@ function loopGame(array, boxes) {
 	btnStart.addEventListener('click', () => {
 		btnStartContainer.classList.toggle('disabled');
 		timerContainer.classList.toggle('disabled');
+		inGameBoard.style.pointerEvents = 'auto';
 		timer.innerText = 30;
 		changeTimer(timer);
 	})
@@ -84,8 +85,6 @@ function showEndGameMessage() {
 
 	endGameDiv.classList.toggle('disabled');
 	inGameBoard.classList.toggle('disabled');
-
-
 }
 
 function changeScore(score) {
