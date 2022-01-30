@@ -1,3 +1,4 @@
+let intervalID;
 initGame();
 
 function initGame() {
@@ -13,14 +14,18 @@ function loopGame(array, boxes) {
 	const btnRestart = document.getElementById('btnRestart');
 	const btnStart = document.getElementById('btnStart');
 	const btnStartContainer = document.getElementById('btnStartContainer');
+	const scoreAndLevelContainer = document.getElementById('scoreAndLevelContainer');
+	const btnRestartContainer = document.getElementById('btnRestartContainer');
+	const timerContainer = document.getElementById('timerContainer');
 	const inGameBoard = document.getElementById('inGame-board');
 	const score = document.getElementById('scoreValue');
 	const timer = document.getElementById('timer');
-	const timerContainer = document.getElementById('timerContainer');
 	let boxesFlippeds = [];
 
 	btnStart.addEventListener('click', () => {
+		scoreAndLevelContainer.classList.toggle('disabled');
 		btnStartContainer.classList.toggle('disabled');
+		btnRestartContainer.classList.toggle('disabled');
 		timerContainer.classList.toggle('disabled');
 		inGameBoard.style.pointerEvents = 'auto';
 		timer.innerText = 30;
@@ -89,10 +94,15 @@ function showEndGameMessage() {
 
 function changeScore(score) {
 	score.innerText++;
+
+	if (score.innerText == 8) {
+		showEndGameMessage();
+		clearInterval(intervalID);
+	}
 }
 
 function changeTimer(timer) {
-	let intervalID = setInterval(function () {
+	intervalID = setInterval(function () {
 		timer.innerText = +timer.innerText - 1;
 		if (timer.innerText == 0) {
 			clearInterval(intervalID);
