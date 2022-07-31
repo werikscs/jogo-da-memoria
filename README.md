@@ -1,13 +1,13 @@
 # Jogo da Memória
 
-### Esta aplicação foi criada com o objetivo de exercitar alguns conceitos de manipulação do **DOM** e usos para o **setInterval**.
+Esta aplicação foi criada com o objetivo de exercitar alguns conceitos de manipulação do **DOM** e usos para o **setInterval**.
 
 #
 
 ## Tecnologias
 
-### - HTML5
+- HTML5
 
-### - CSS3
+- CSS3
 
-### - JavaScript
+- JavaScript
